@@ -25,8 +25,8 @@ function App() {
   }
 
   function handleDeleteData(dataId) {
-    const newData = data.map((value) => {
-      return value.id === dataId;
+    const newData = data.filter((value) => {
+      return value.id !== dataId;
     });
 
     setData(newData);

@@ -12,6 +12,7 @@ function ExpenseInput(args) {
       <h2>Add new expense</h2>
 
       <input
+        required
         placeholder="Name"
         onChange={(event) => {
           setInputName(event.target.value);
@@ -19,6 +20,7 @@ function ExpenseInput(args) {
       />
 
       <input
+        required
         placeholder="Sum"
         onChange={(event) => {
           setInputSum(event.target.value);
@@ -43,6 +45,9 @@ function ExpenseInput(args) {
           };
 
           handleAddData(addedData);
+          setInputName("");
+          setInputSum("");
+          setInputCategory("");
         }}
       >
         +
