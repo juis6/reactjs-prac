@@ -7,7 +7,9 @@ function ExpenseList(args) {
     <div>
       <h2>Your Expenses</h2>
       {data.map((value) => {
-        return <ExpenseCard key={value.id} item={value}></ExpenseCard>;
+        return (
+          <ExpenseCard key={value.id} item={value} {...args}></ExpenseCard>
+        );
       })}
     </div>
   );

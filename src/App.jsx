@@ -9,7 +9,7 @@ function App() {
 
   const [data, setData] = useState([
     {
-      id: nextId,
+      id: 0,
       date: Date.now(),
       name: "Add your first expense",
       amount: 0,
@@ -17,19 +17,29 @@ function App() {
     },
   ]);
 
-  setNextId(nextId + 1);
-
   function handleAddData(addedData) {
     const newData = [...data, addedData];
+
     setData(newData);
     setNextId(nextId + 1);
+  }
+
+  function handleDeleteData(dataId) {
+    const newData = data.map((value) => {
+      return value.id === dataId;
+    });
+
+    setData(newData);
   }
 
   return (
     <>
       <Header data={data}></Header>
 
-      <ExpenseList data={data}></ExpenseList>
+      <ExpenseList
+        data={data}
+        handleDeleteData={handleDeleteData}
+      ></ExpenseList>
 
       <ExpenseInput
         nextId={nextId}

@@ -43,7 +43,6 @@ function ExpenseInput(args) {
           };
 
           handleAddData(addedData);
-          console.log(nextId);
         }}
       >
         +
