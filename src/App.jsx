@@ -5,14 +5,25 @@ import Header from "./components/Header";
 import { useState } from "react";
 
 function App() {
+  const [nextId, setNextId] = useState(1);
+
   const [data, setData] = useState([
     {
-      id: Date.now(),
+      id: nextId,
+      date: Date.now(),
       name: "Add your first expense",
-      amount: 100,
+      amount: 0,
       category: "None",
     },
   ]);
+
+  setNextId(nextId + 1);
+
+  function handleAddData(addedData) {
+    const newData = [...data, addedData];
+    setData(newData);
+    setNextId(nextId + 1);
+  }
 
   return (
     <>
@@ -20,7 +31,10 @@ function App() {
 
       <ExpenseList data={data}></ExpenseList>
 
-      <ExpenseInput></ExpenseInput>
+      <ExpenseInput
+        nextId={nextId}
+        handleAddData={handleAddData}
+      ></ExpenseInput>
     </>
   );
 }

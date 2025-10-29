@@ -5,7 +5,7 @@ function Header(args) {
 
   let totalSum = 0;
   data.forEach((value) => {
-    totalSum += value["amount"];
+    totalSum += value.amount;
   });
 
   return (

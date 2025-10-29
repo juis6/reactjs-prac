@@ -3,9 +3,10 @@ function ExpenseCard(args) {
 
   return (
     <div>
-      <h3>{item["name"]}</h3>
-      <p>{item["amount"]}</p>
-      <p>{item["category"]}</p>
+      <h3>{item.name}</h3>
+      <p>Sum: {item.amount}</p>
+      <p>Category: {item.category}</p>
+      <button>Delete</button>
     </div>
   );
 }

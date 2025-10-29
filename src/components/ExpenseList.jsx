@@ -6,8 +6,8 @@ function ExpenseList(args) {
   return (
     <div>
       <h2>Your Expenses</h2>
-      {data.forEach((value) => {
-        return <ExpenseCard item={value}></ExpenseCard>;
+      {data.map((value) => {
+        return <ExpenseCard key={value.id} item={value}></ExpenseCard>;
       })}
     </div>
   );
